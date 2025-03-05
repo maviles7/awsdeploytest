@@ -15,6 +15,16 @@ services = [
     Service('Product 3', 'Description for product 3', 30.00),
 ]
 
+class Contact: 
+    def __init__(self, name, email, phone):
+        self.name = name
+        self.email = email
+        self.phone = phone
+
+contacts = [
+    Contact('Steve', 'americasass@gmail.com', '123-456-7890'),
+]
+
 def home(request): 
     return render(request, 'home.html')
 
@@ -23,3 +33,6 @@ def about(request):
 
 def service_index(request):
     return render(request, 'services/index.html', {'services': services})
+
+def contact(request):
+    return render(request, 'contact.html', {'contacts': contacts})
