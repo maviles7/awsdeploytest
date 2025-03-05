@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>services.</h1>
+<div>
+    {% for service in services %}
+    <h2>{{ service.name }}</h2>
+    <p>${{ service.price }}</p>
+    <p>{{ service.description }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
