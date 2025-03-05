@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load phone_number_filters %}
 
 {% block content %}
 
@@ -8,7 +9,7 @@
     {% for contact in contacts %}
     <h2>{{ contact.name }}</h2>
     <p>{{ contact.email }}</p>
-    <p>{{ contact.phone }}</p>
+    <p>{{ contact.phone|format_phone_number }}</p>
     {% endfor %}
 </div>
 
